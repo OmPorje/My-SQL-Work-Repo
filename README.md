@@ -45,11 +45,11 @@ Sample datasets provided for query testing and practice.
 
 ## 🛠️ Tech Stack
 
-###### Language: SQL
+## Language: SQL
 
-###### Database: MySQL/SQL Server
+## Database: MySQL/SQL Server
 
-###### Tools: MySQL Workbench, phpMyAdmin (optional), Command Line
+## Tools: MySQL Workbench, phpMyAdmin (optional), Command Line
 
 
 ## 🚧 Work in Progress
