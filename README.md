@@ -34,13 +34,13 @@ Sample datasets provided for query testing and practice.
 
 ### 🎯 Ideal For
 
-###### Students & learners exploring SQL fundamentals
+### Students & learners exploring SQL fundamentals
 
-###### Developers polishing their MySQL skills
+### Developers polishing their MySQL skills
 
-###### Data enthusiasts practicing real-world query writing
+### Data enthusiasts practicing real-world query writing
 
-###### Anyone preparing for SQL interviews or certifications
+### Anyone preparing for SQL interviews or certifications
 
 
 ## 🛠️ Tech Stack
