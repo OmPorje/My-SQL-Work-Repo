@@ -1,7 +1,8 @@
-📘 My-SQL-Work-Repo — Learn & Practice MySQL with Real-World Projects
+![image](https://github.com/user-attachments/assets/9be6ca56-1872-4964-8d7d-b78988d31198)
+# 📘 My-SQL-Work-Repo — Learn & Practice MySQL with Real-World Projects
 A complete MySQL learning repository featuring hands-on SQL projects, practice queries, and real-world database tasks. Perfect for students, developers, and data enthusiasts looking to master SQL through practical experience. 🚀
 
-🧠 What's Inside This SQL Learning Repository
+## 🧠 What's Inside This SQL Learning Repository
 ✅ Basic to Advanced MySQL Queries
 Learn SQL step-by-step — from simple SELECT statements to complex JOIN, GROUP BY, subqueries, window functions, and aggregate operations.
 
@@ -17,7 +18,7 @@ Understand how to design and normalize relational databases with practical schem
 🧪 Sample Test Databases & Datasets
 Pre-built test databases are included so you can run and test your queries instantly.
 
-🎯 Who Should Use This Repository?
+## 🎯 Who Should Use This Repository?
 This repo is perfect for:
 
 📘 Beginners learning MySQL and SQL syntax
@@ -30,14 +31,14 @@ This repo is perfect for:
 
 💼 Professionals studying for certifications like MySQL, Oracle, or PostgreSQL
 
-🛠️ Technologies & Tools
+## 🛠️ Technologies & Tools
 Language: SQL
 
 Databases Supported: MySQL, SQL Server
 
 Tools: MySQL Workbench, phpMyAdmin, DBeaver, or Command Line
 
-🚧 Ongoing Development — Updated Regularly!
+## 🚧 Ongoing Development — Updated Regularly!
 This SQL practice repo is actively maintained with:
 
 🆕 New SQL exercises and problems
@@ -50,7 +51,7 @@ This SQL practice repo is actively maintained with:
 
 📌 Follow or star this repo to stay updated with the latest content.
 
-🤝 How to Contribute
+## 🤝 How to Contribute
 We welcome contributions from the community! If you have:
 
 💡 Unique SQL queries or problems
