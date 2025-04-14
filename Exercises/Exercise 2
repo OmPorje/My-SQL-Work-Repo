@@ -1,0 +1,129 @@
+-- Create the Hospital database
+CREATE DATABASE HospitalDB;
+
+-- Use the HospitalDB database
+USE HospitalDB;
+
+-- Create Patients Table
+CREATE TABLE Patients (
+    Patient_ID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    Gender VARCHAR(10),
+    Contact_Number VARCHAR(15)
+);
+
+-- Insert Data into Patients Table
+INSERT INTO Patients VALUES
+(1, 'Raj Mehta', 34, 'Male', '9876543210'),
+(2, 'Sneha Rao', 28, 'Female', '9123456789'),
+(3, 'Aarav Shah', 45, 'Male', '9988776655'),
+(4, 'Priya Nair', 52, 'Female', '9812345678'),
+(5, 'Ravi Patil', 60, 'Male', '9001122334'),
+(6, 'Kavya Iyer', 31, 'Female', '9871122334'),
+(7, 'Deepak Joshi', 40, 'Male', '8991122334'),
+(8, 'Meena Gupta', 27, 'Female', '7654321098'),
+(9, 'Arjun Reddy', 36, 'Male', '9765432109'),
+(10, 'Tina Fernandes', 48, 'Female', '7890654321');
+
+SELECT * FROM Patients;
+
+-- Create Doctors Table
+CREATE TABLE Doctors (
+    Doctor_ID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Specialization VARCHAR(50),
+    Contact_Number VARCHAR(15),
+    Email VARCHAR(100)
+);
+
+-- Insert Data into Doctors Table
+INSERT INTO Doctors VALUES
+(1, 'Dr. A. Sharma', 'Cardiologist', '9823456789', 'sharma@hospital.com'),
+(2, 'Dr. R. Desai', 'Dermatologist', '9988776655', 'desai@hospital.com'),
+(3, 'Dr. P. Kapoor', 'Neurologist', '9123456780', 'kapoor@hospital.com'),
+(4, 'Dr. L. Fernandes', 'Pediatrician', '9876567890', 'fern@hospital.com'),
+(5, 'Dr. S. Joshi', 'Orthopedic', '9812345670', 'joshi@hospital.com'),
+(6, 'Dr. M. Rao', 'Psychiatrist', '9123456709', 'rao@hospital.com'),
+(7, 'Dr. B. Nair', 'ENT Specialist', '9012345678', 'nair@hospital.com'),
+(8, 'Dr. K. Khan', 'Oncologist', '9234567890', 'khan@hospital.com'),
+(9, 'Dr. D. Shah', 'General', '9345678901', 'shah@hospital.com'),
+(10, 'Dr. V. Iyer', 'Urologist', '9456789012', 'iyer@hospital.com');
+
+SELECT * FROM Doctors;
+
+-- 5. Create Appointments Table (with foreign keys to Patients and Doctors)
+CREATE TABLE Appointments (
+    Appointment_ID INT PRIMARY KEY,
+    Patient_ID INT,
+    Doctor_ID INT,
+    Date DATE,
+    Time TIME,
+    FOREIGN KEY (Patient_ID) REFERENCES Patients(Patient_ID),
+    FOREIGN KEY (Doctor_ID) REFERENCES Doctors(Doctor_ID)
+);
+
+-- Insert Data into Appointments Table
+INSERT INTO Appointments VALUES
+(1, 1, 2, '2025-04-01', '10:00:00'),
+(2, 2, 3, '2025-04-01', '11:00:00'),
+(3, 3, 1, '2025-04-02', '09:30:00'),
+(4, 4, 5, '2025-04-02', '13:00:00'),
+(5, 5, 4, '2025-04-03', '15:00:00'),
+(6, 6, 6, '2025-04-03', '12:00:00'),
+(7, 7, 7, '2025-04-04', '10:30:00'),
+(8, 8, 8, '2025-04-04', '14:00:00'),
+(9, 9, 9, '2025-04-05', '11:30:00'),
+(10, 10, 10, '2025-04-05', '16:00:00');
+
+SELECT * FROM Appointments;
+
+-- 6. Create Medications Table (linked to Patients)
+CREATE TABLE Medications (
+    Medication_ID INT PRIMARY KEY,
+    Patient_ID INT,
+    Medication_Name VARCHAR(100),
+    Dosage VARCHAR(50),
+    Start_Date DATE,
+    FOREIGN KEY (Patient_ID) REFERENCES Patients(Patient_ID)
+);
+
+-- Insert Data into Medications Table
+INSERT INTO Medications VALUES
+(1, 1, 'Paracetamol', '500mg 2x/day', '2025-04-01'),
+(2, 2, 'Ibuprofen', '400mg 3x/day', '2025-04-01'),
+(3, 3, 'Atorvastatin', '10mg daily', '2025-04-02'),
+(4, 4, 'Metformin', '500mg 2x/day', '2025-04-02'),
+(5, 5, 'Amlodipine', '5mg daily', '2025-04-03'),
+(6, 6, 'Omeprazole', '20mg before meals', '2025-04-03'),
+(7, 7, 'Sertraline', '50mg daily', '2025-04-04'),
+(8, 8, 'Losartan', '25mg daily', '2025-04-04'),
+(9, 9, 'Cetirizine', '10mg at night', '2025-04-05'),
+(10, 10, 'Vitamin D', '1000IU daily', '2025-04-05');
+
+SELECT * FROM Medications;
+
+-- 7. Create Bills Table (linked to Patients)
+CREATE TABLE Bills (
+    Bill_ID INT PRIMARY KEY,
+    Patient_ID INT,
+    Date DATE,
+    Amount DECIMAL(10,2),
+    Payment_Status VARCHAR(20),
+    FOREIGN KEY (Patient_ID) REFERENCES Patients(Patient_ID)
+);
+
+-- Insert Data into Bills Table
+INSERT INTO Bills VALUES
+(1, 1, '2025-04-01', 500.00, 'Paid'),
+(2, 2, '2025-04-01', 800.00, 'Unpaid'),
+(3, 3, '2025-04-02', 1000.00, 'Paid'),
+(4, 4, '2025-04-02', 1500.00, 'Paid'),
+(5, 5, '2025-04-03', 750.00, 'Unpaid'),
+(6, 6, '2025-04-03', 1200.00, 'Paid'),
+(7, 7, '2025-04-04', 600.00, 'Paid'),
+(8, 8, '2025-04-04', 950.00, 'Unpaid'),
+(9, 9, '2025-04-05', 700.00, 'Paid'),
+(10, 10, '2025-04-05', 1100.00, 'Paid');
+
+SELECT * FROM Bills;
